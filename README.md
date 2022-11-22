@@ -1,1 +1,1 @@
-# Comic-Quizz
+# Hero-Quizz

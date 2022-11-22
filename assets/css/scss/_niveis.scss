@@ -1,0 +1,105 @@
+.grid {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+
+  background-color: $sombra;
+  color: $corFonteSecundaria;
+  padding: 5px;
+  border-radius: 15px;
+
+  @include d(t) {
+    margin: 0px;
+    margin-bottom: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  @include d(d) {
+    margin: 0px;
+    margin-bottom: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+.titulo-nivel {
+  @include fontePrincipal(g2);
+  border: 2px solid $corFontePrincipal;
+
+  font-weight: bold;
+  grid-column: 1 / -1;
+  background-color: $corPrincipal;
+  border-radius: 15px;
+  text-align: center;
+}
+.progresso-nivel {
+  @include fontePrincipal(g);
+  border: 2px solid $corFontePrincipal;
+
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+  background-color: $corPrincipal;
+  border-radius: 15px;
+  padding: 5px 15px;
+  text-align: center;
+}
+.card-level {
+  margin: 0 auto;
+  display: block;
+  width: 85px;
+  height: 85px;
+  background-color: $fundoNivel;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  border-radius: 15px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  &:hover {
+    transform: scale(1.05);
+    border: 2px solid $corPrincipal;
+  }
+  @include d(d) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.card-level.concluido {
+  background-color: $corFonteSecundaria;
+  border: 2px solid $corConcluido;
+
+  @include fontePrincipal(p);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  color: $corFontePrincipal;
+  text-shadow: 0px 0px 5px $corConcluido;
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &:hover {
+    transform: scale(1);
+  }
+  cursor: auto;
+  &::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/concluido.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+  }
+}

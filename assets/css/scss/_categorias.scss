@@ -1,0 +1,65 @@
+.categorias-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  column-gap: 15px;
+  max-width: 350px;
+  margin-top: 2%;
+  @include d(d) {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    max-width: 500px;
+  }
+}
+
+.caterogia {
+  @include fontePrincipal(m1);
+  border: 2px solid $corFontePrincipal;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: $corPrincipal;
+  color: $corFonteSecundaria;
+
+  padding: 20px 10px;
+  border-radius: 15px;
+  width: 100%;
+  width: 150px;
+  img {
+    max-width: 15px;
+  }
+  span {
+    color: $corFontePrincipal;
+  }
+  @include d(d) {
+    font-size: 1.3rem;
+    width: 200px;
+  }
+}
+.caterogia:hover {
+  transform: scale(1.05);
+}
+
+.caterogia.bloqueada {
+  background-color: #474646;
+  border: 2px solid $corFonteSecundaria;
+
+  position: relative;
+  cursor: auto;
+  transform: scale(1);
+}
+.caterogia.bloqueada::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/cadeado.png);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 30%;
+  right: 5px;
+}

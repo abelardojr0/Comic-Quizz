@@ -1,0 +1,114 @@
+.modal-container {
+  height: 100vh;
+  width: 100%;
+  background: $sombraSuave;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container.ativo {
+  display: flex;
+}
+
+.modal {
+  background: $sombra;
+  border-radius: 15px;
+  width: 300px;
+  padding: 20px;
+  border: 5px solid $corSecundaria;
+  box-shadow: 0 0 0 5px $corFontePrincipal;
+  position: relative;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: $corFontePrincipal;
+  }
+  img {
+    max-width: 20px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  a.opcao {
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $corFontePrincipal;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 2px solid $corSecundaria;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    &.desativado {
+      cursor: auto;
+      background-color: $fundoCardMostruario;
+      user-select: none;
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+  span {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-weight: bold;
+    background-color: $fundoCardResposta;
+    border-radius: 15px;
+    padding: 5px;
+  }
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.ativo .modal {
+  animation: modal 0.3s forwards;
+}
+
+.fechar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 4px solid $corFontePrincipal;
+  top: -8px;
+  right: -9px;
+  position: absolute;
+  background: $corSecundaria;
+  box-shadow: 0 4px 4px 0 $sombraSuave;
+  @include fontePrincipal(m1);
+  color: $corFontePrincipal;
+
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+  @include d(t) {
+    top: -30px;
+    right: -30px;
+  }
+  @include d(d) {
+    top: -30px;
+    right: -30px;
+  }
+}

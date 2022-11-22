@@ -1,0 +1,211 @@
+.modal-container-acerto {
+  height: 100%;
+  width: 100%;
+  background: $sombraSuave;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.modal-container-acerto.ativo {
+  display: flex;
+}
+
+.modal-acerto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100vh;
+  border-radius: 15px;
+  padding: 0px;
+
+  position: relative;
+
+  background-image: url(../img/bg-acerto.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.nome-heroi {
+  @include fontePrincipal(g);
+
+  text-align: center;
+  color: $corFontePrincipal;
+  text-shadow: 0 0 10px rgb(90, 89, 89);
+  background-color: $sombra;
+  border-radius: 15px;
+  border: 2px solid $corFontePrincipal;
+  padding: 10px 15px;
+  margin: auto;
+  margin-bottom: 30px;
+  max-width: 320px;
+
+  @include d(t) {
+    max-width: 350px;
+    font-size: 2.5rem;
+  }
+  @include d(d) {
+    max-width: 350px;
+    font-size: 2.5rem;
+  }
+}
+
+.botao {
+  cursor: pointer;
+  @include fontePrincipal(g2);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $corFontePrincipal;
+
+  border-radius: 15px;
+  border: none;
+  padding: 10px 15px;
+}
+
+.avancar {
+  animation: piscaAzul 3000ms infinite;
+  box-shadow: 0 0 15px $sombraSuave;
+  border: 5px solid $corFontePrincipal;
+  @include fontePrincipal(g);
+  @include d(t) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  @include d(d) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.bonus {
+  @include fontePrincipal(g);
+  border: 2px solid $corFontePrincipal;
+  animation: piscaVerde 1000ms infinite;
+  box-shadow: 0 0 15px $sombraSuave;
+  &.remover {
+    display: none;
+  }
+  @include d(t) {
+    width: 200px;
+  }
+  @include d(d) {
+    width: 200px;
+  }
+}
+.container-moeda {
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 15px;
+  border: 2px solid $corFontePrincipal;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  color: $corFontePrincipal;
+  background: linear-gradient(0deg, $corSecundaria 0%, #fece00 100%);
+
+  box-shadow: 0 0 15px $sombraSuave;
+  img {
+    max-width: 50px;
+  }
+  @include d(t) {
+    margin: auto 0;
+  }
+  @include d(d) {
+    margin: auto 0;
+  }
+}
+
+.contador {
+  @include fontePrincipal(g);
+}
+
+.imagem-acerto {
+  width: 300px;
+  height: 300px;
+  margin-top: 200px;
+  @include d(t) {
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+  @include d(d) {
+    margin-top: 100px;
+    margin-bottom: 10px;
+  }
+}
+.acerto-header {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0px 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  @include d(t) {
+    position: absolute;
+    bottom: 15%;
+    padding: 0px 30px;
+  }
+  @include d(d) {
+    position: absolute;
+    bottom: 15%;
+    justify-content: space-between;
+    padding: 0px 100px;
+  }
+}
+.acerto-footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+@keyframes piscaAzul {
+  0% {
+    background-color: $botaoAvancar;
+    box-shadow: 0 0 3px $botaoAvancar;
+  }
+  50% {
+    background-color: $corSecundaria;
+    box-shadow: 0 0 3px $corSecundaria;
+  }
+  100% {
+    background-color: $botaoAvancar;
+    box-shadow: 0 0 3px $botaoAvancar;
+  }
+}
+
+@keyframes piscaVerde {
+  0% {
+    background-color: $botaoBonusPrincipal;
+    box-shadow: 0 0 3px $botaoBonusPrincipal;
+    transform: scale(1);
+  }
+  50% {
+    background-color: $botaoBonusSecundaria;
+    box-shadow: 0 0 3px $botaoBonusSecundaria;
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: $botaoBonusPrincipal;
+    box-shadow: 0 0 3px $botaoBonusPrincipal;
+    transform: scale(1);
+  }
+}

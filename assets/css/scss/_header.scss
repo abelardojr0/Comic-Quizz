@@ -1,0 +1,106 @@
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  height: 150px;
+
+  img {
+    max-width: 150px;
+  }
+}
+
+.voltar {
+  position: absolute;
+  left: 10px;
+  top: 20px;
+
+  border-radius: 15px;
+  padding: 5px;
+  background-color: $corFontePrincipal;
+  border: 1px solid $corFonteSecundaria;
+
+  img {
+    max-width: 40px;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.sair {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+
+  background-color: $corPrincipal;
+  border: 2px solid $corFonteSecundaria;
+  border-radius: 15px;
+  padding: 5px;
+
+  img {
+    max-width: 40px;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.moedas {
+  background-color: $corPrincipal;
+  border: 2px solid $corFonteSecundaria;
+
+  border-radius: 15px;
+  padding: 5px 8px;
+  width: 110px;
+
+  position: absolute;
+  right: 5px;
+  top: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @include d(d) {
+    padding: 5px 10px;
+    width: 100px;
+  }
+  img {
+    max-width: 30px;
+  }
+  span {
+    @include fontePrincipal(m1);
+    font-weight: bold;
+    color: $corFontePrincipal;
+  }
+}
+
+.user {
+  @include fonteCursiva(m1);
+  border: 2px solid $corFonteSecundaria;
+
+  position: absolute;
+  top: 60px;
+  right: 5px;
+
+  background-color: $corPrincipal;
+  color: $corFontePrincipal;
+  border-radius: 15px;
+  padding: 5px 8px;
+  margin-bottom: 10px;
+  width: 110px;
+
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  word-break: break-all;
+
+  img {
+    max-width: 20px;
+  }
+  @include d(d) {
+    width: 100px;
+    top: 60px;
+  }
+}

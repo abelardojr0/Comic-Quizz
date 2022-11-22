@@ -1,0 +1,214 @@
+.modal-container-bonus {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: none;
+  justify-content: center;
+}
+
+.modal-container-bonus.ativo {
+  display: flex;
+}
+
+.modal-bonus {
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 320px;
+  height: 400px;
+  margin-top: 15px;
+  padding: 0px;
+
+  position: relative;
+
+  background-image: url(../img/bg.jpg);
+  background-position: center;
+  background-size: cover;
+
+  label {
+    @include fontePrincipal(m2);
+    border: 2px solid $corFontePrincipal;
+
+    text-align: center;
+    color: $corFonteSecundaria;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+    border-radius: 15px;
+    width: 200px;
+    padding: 5px 15px;
+    line-height: 1.2;
+
+    background-color: $corSecundaria;
+
+    margin: auto;
+    @include d(t) {
+      font-size: 2.5rem;
+      width: 500px;
+    }
+    @include d(d) {
+      font-size: 2.5rem;
+      width: 500px;
+    }
+  }
+  input {
+    margin-top: 10px;
+    padding: 10px 15px;
+    outline: none;
+    border: 2px solid $corSecundaria;
+    border-radius: 15px;
+    @include d(d) {
+      margin-top: 80px;
+    }
+  }
+  @include d(t) {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    height: 90vh;
+    margin: 5px auto;
+    justify-content: center;
+    align-self: center;
+  }
+  @include d(d) {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    height: 90vh;
+    justify-content: center;
+    align-self: center;
+  }
+}
+.modal-bonus.errado {
+  border: 5px solid $botaoErroPrincipal;
+  input {
+    border: 2px solid $botaoErroPrincipal;
+  }
+  .fechar {
+    animation: piscaVermelho 1000ms infinite;
+  }
+}
+
+.botao-responder {
+  @include fontePrincipal(g);
+  border: 2px solid $corFontePrincipal;
+
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: $corFontePrincipal;
+  width: 220px;
+  animation: piscaAzul 1000ms infinite;
+  align-self: center;
+  margin-top: 0px;
+  @include d(d) {
+    width: 500px;
+  }
+}
+.botao-responder:disabled {
+  animation: desabilitado 1000ms infinite;
+}
+.botao-responder.errado {
+  animation: piscaVermelho 1000ms infinite;
+}
+
+.caracters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+
+  background-color: $corSecundaria;
+  border: 2px solid $corFontePrincipal;
+
+  border-radius: 15px;
+  margin: auto;
+  padding: 5px 10px;
+
+  h1 {
+    color: $corFonteSecundaria;
+    @include fontePrincipal(m2);
+    margin-bottom: 0px;
+    @include d(d) {
+      @include fontePrincipal(g);
+    }
+  }
+  p {
+    @include fontePrincipal(m2);
+    @include d(d) {
+      @include fontePrincipal(g);
+    }
+  }
+}
+
+.sublinhado {
+  display: none;
+  @include fontePrincipal(g);
+  letter-spacing: 2px;
+
+  position: absolute;
+  top: 55%;
+
+  background-color: $corSecundaria;
+  padding: 5px 10px;
+  border-radius: 15px;
+
+  @include d(d) {
+    display: block;
+    font-size: 2.5rem;
+  }
+}
+form {
+  margin-top: 0px;
+}
+
+@keyframes piscaAzul {
+  0% {
+    background-color: $botaoAvancar;
+    box-shadow: 0 0 3px $botaoAvancar;
+  }
+  50% {
+    background-color: $corSecundaria;
+    box-shadow: 0 0 3px $corSecundaria;
+  }
+  100% {
+    background-color: $botaoAvancar;
+    box-shadow: 0 0 3px $botaoAvancar;
+  }
+}
+
+@keyframes piscaVermelho {
+  0% {
+    background-color: $botaoErroPrincipal;
+    box-shadow: 0 0 3px $botaoErroPrincipal;
+  }
+  50% {
+    background-color: $botaoErroSecundaria;
+    box-shadow: 0 0 3px $botaoErroSecundaria;
+  }
+  100% {
+    background-color: $botaoErroPrincipal;
+    box-shadow: 0 0 3px $botaoErroPrincipal;
+  }
+}
+
+@keyframes desabilitado {
+  0% {
+    background-color: $botaoDesabilitado;
+    box-shadow: 0 0 3px $botaoDesabilitado;
+  }
+  50% {
+    background-color: $botaoDesabilitado;
+    box-shadow: 0 0 3px $botaoDesabilitado;
+  }
+  100% {
+    background-color: $botaoDesabilitado;
+    box-shadow: 0 0 3px $botaoDesabilitado;
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../../../favicon.ico">
+  <title>Comic Quizz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body data-fase="120">
+
+  <div data-container class="card-container">
+
+    <div class="header">
+      <img src="../../img/logo.png" alt="">
+      <a class="voltar" href="../niveis/nivel10.html"><img src="../../img/voltar.png" alt=""></a>
+      <span class="moedas"><img src="../../img/moedas.png" alt=""><span data-moedas></span></span>
+      <p class="user"><img src="../../img/user.png" alt=""><span data-usuario></span></p>
+
+      <a class="dica" data-botao-dica href="#"><img src="../../img/lampada.png" alt=""></a></li>
+    </div>
+    <div data-container-imagem class="imagem">
+    </div>
+
+
+    <section class="modal-container" data-modal="container">
+      <div class="modal">
+        <button data-modal="fechar" class="fechar">X</button>
+        <h1>Qual dica você deseja?</h1>
+        <ul>
+          <li><a href="#" data-revelar-letra class="opcao">Revelar uma letra correta <span><span data-custo-revelar>40</span><img src="../../img/moedas.png" alt=""></span></a></li>
+
+          <li><a href="#" data-remover-letra class="opcao">Remover uma letra errada <span><span data-custo-remover>40</span><img src="../../img/moedas.png" alt=""></span></a></li>
+
+
+
+          <li><a href="#" data-colorir class="opcao">Colorir imagem<span><span data-custo-colorir>30</span><img src="../../img/moedas.png" alt=""></span></a> </li>
+
+          <li><a href="" data-mostrar-resposta class="opcao">Mostrar resposta<span><span data-custo-resposta>40</span><img src="../../img/moedas.png" alt=""></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="modal-container-acerto" data-modal="container-acerto">
+      <div class="modal modal-acerto">
+        <div class="acerto-header">
+          <a class="botao bonus" data-bonus href="">Bônus</a>
+          <div class="container-moeda">
+            <div class="contador">0</div>
+            <div><img src="../../img/moedas.png" alt=""></div>
+          </div>
+        </div>
+
+
+        <div data-imagem-acerto class="imagem imagem-acerto"></div>
+
+        <div class="acerto-footer">
+          <p class="nome-heroi" data-nome-heroi></p>
+          <a class="botao avancar" data-avancar href="">Avançar</a>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <section class="modal-container-bonus" data-modal="container-bonus">
+      <div data-box-bonus class="modal modal-bonus">
+        <button data-modal="fechar-bonus" class="fechar">X</button>
+        <form data-form-bonus action="">
+          <label for="nome">Qual a identidade real desse personagem?</label>
+          <div class="caracters">
+            <h1>Caracters: </h1>
+            <p data-caracters></p>
+            <h3 class="sublinhado" data-underlines></h3>
+
+          </div>
+          <input data-input-bonus type="text" name="nome" id="nome" autocomplete="off" maxlength="0">
+          <button data-botao-resposta-bonus class="botao-responder" type="submit" disabled>Responder</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="opcoes">
+
+      <div data-container-resposta class="resposta">
+      </div>
+
+      <div data-container-mostruario class="mostruario">
+        <div data-limpar class="card limpar">X</div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Comic Quizz © Alguns direitos revervados.</p>
+    <span>Desenvolvido por Abelardo & Andressa</span>
+    <div class="sociais">
+      <a href="https://www.linkedin.com/in/abelardo-j%C3%BAnior-" target="_blank"><img src="../../img/linkedin.png" alt=""></a>
+      <a href="https://github.com/abelardojr0" target="_blank"><img src="../../img/github.png" alt=""></a>
+    </div>
+  </footer>
+
+
+  <script src="../../js/script.js "></script>
+
+</body>
+
+
+
+
+</html>
