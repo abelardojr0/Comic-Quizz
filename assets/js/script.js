@@ -1175,26 +1175,43 @@ if (heroi) {
       boxBonus.classList.remove("errado");
       botaoRespostaBonus.classList.remove("errado");
       const tamanhoInput = event.target.value.length; // VAI PEGAR QUANTAS LETRAS JÁ FORAM DIGITADAS NO INPUT
-      if (event.data !== null) {
-        // SE O QUE O USUARIO DIGITOU FOI DIFERENTE DE BACKSPACE(APAGAR)
-        qtdeCaracters.innerText = nomes[faseTela - 1].length - tamanhoInput; // AQUI É SÓ PRA ATUALIZAR O NÚMERO DE CARACTERS QUE AINDA FALTA DIGITAR PARA COMPLETAR O NOME
 
-        arrayUnderlines[tamanhoInput - 1] =
-          event.target.value[tamanhoInput - 1].toLocaleUpperCase(); //ENTÃO ADICIONO ESSA LETRA DIGITADA NO ARRAY DAS UNDERLINES
-        underlines.innerText = arrayUnderlines.join("").replace(",", ""); // E MOSTRO O CAMPO ATUALIZADO COM A NOVA LETRA
-      } else {
-        qtdeCaracters.innerText = nomes[faseTela - 1].length - tamanhoInput; // AQUI É SÓ PRA ATUALIZAR O NÚMERO DE CARACTERS QUE AINDA FALTA DIGITAR PARA COMPLETAR O NOME
-        // SENÃO, OU SEJA, ELE DIGITOU "APAGAR"
+      if(event.inputType === "deleteContentBackward"){
+        qtdeCaracters.innerText = nomes[faseTela - 1].length - tamanhoInput;
         if (arrayUnderlines[tamanhoInput] === " ") {
-          // SE ELE TA TENTANDO APAGAR UM ESPAÇO VAZIO, ELE APENAS CONTINUA VAZIO
-          arrayUnderlines[tamanhoInput] = " ";
-          underlines.innerText = arrayUnderlines.join("").replace(",", ""); // ATUALIZO NA TELA
-        } else {
-          // SE ELE TIVER TENTANDO APAGAR UM ESPAÇO QUE TENHA UM CARACTES, VOLTA A SER UM UNDERLINE
-          arrayUnderlines[tamanhoInput] = "_";
-          underlines.innerText = arrayUnderlines.join("").replace(",", ""); //ATUALIZO NA TELA
-        }
+              // SE ELE TA TENTANDO APAGAR UM ESPAÇO VAZIO, ELE APENAS CONTINUA VAZIO
+              arrayUnderlines[tamanhoInput] = " ";
+              underlines.innerText = arrayUnderlines.join("").replace(",", ""); // ATUALIZO NA TELA
+            } else {
+              // SE ELE TIVER TENTANDO APAGAR UM ESPAÇO QUE TENHA UM CARACTES, VOLTA A SER UM UNDERLINE
+              arrayUnderlines[tamanhoInput] = "_";
+              underlines.innerText = arrayUnderlines.join("").replace(",", ""); //ATUALIZO NA TELA
+            }
+      }else{
+        qtdeCaracters.innerText = nomes[faseTela - 1].length - tamanhoInput;
+        arrayUnderlines[tamanhoInput -1] = event.target.value[tamanhoInput - 1].toLocaleUpperCase();
+        underlines.innerText = arrayUnderlines.join("").replace(",", "");
       }
+      // if (event.data !== null) {
+      //   // SE O QUE O USUARIO DIGITOU FOI DIFERENTE DE BACKSPACE(APAGAR)
+      //   qtdeCaracters.innerText = nomes[faseTela - 1].length - tamanhoInput; // AQUI É SÓ PRA ATUALIZAR O NÚMERO DE CARACTERS QUE AINDA FALTA DIGITAR PARA COMPLETAR O NOME
+
+      //   arrayUnderlines[tamanhoInput - 1] =
+      //     event.target.value[tamanhoInput - 1].toLocaleUpperCase(); //ENTÃO ADICIONO ESSA LETRA DIGITADA NO ARRAY DAS UNDERLINES
+      //   underlines.innerText = arrayUnderlines.join("").replace(",", ""); // E MOSTRO O CAMPO ATUALIZADO COM A NOVA LETRA
+      // } else {
+      //   qtdeCaracters.innerText = nomes[faseTela - 1].length - tamanhoInput; // AQUI É SÓ PRA ATUALIZAR O NÚMERO DE CARACTERS QUE AINDA FALTA DIGITAR PARA COMPLETAR O NOME
+      //   // SENÃO, OU SEJA, ELE DIGITOU "APAGAR"
+      //   if (arrayUnderlines[tamanhoInput] === " ") {
+      //     // SE ELE TA TENTANDO APAGAR UM ESPAÇO VAZIO, ELE APENAS CONTINUA VAZIO
+      //     arrayUnderlines[tamanhoInput] = " ";
+      //     underlines.innerText = arrayUnderlines.join("").replace(",", ""); // ATUALIZO NA TELA
+      //   } else {
+      //     // SE ELE TIVER TENTANDO APAGAR UM ESPAÇO QUE TENHA UM CARACTES, VOLTA A SER UM UNDERLINE
+      //     arrayUnderlines[tamanhoInput] = "_";
+      //     underlines.innerText = arrayUnderlines.join("").replace(",", ""); //ATUALIZO NA TELA
+      //   }
+      // }
 
       if (tamanhoInput >= 3) {
         // SE TIVER PELO MENOS 3 DIGITOS, O BOTÃO HABILITA

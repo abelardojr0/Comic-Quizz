@@ -52,37 +52,33 @@
     margin: auto;
     @include d(t) {
       font-size: 2.5rem;
-      width: 500px;
+      width: 400px;
     }
     @include d(d) {
       font-size: 2.5rem;
-      width: 500px;
+      width: 400px;
     }
   }
   input {
-    margin-top: 10px;
+    margin-top: 60px;
     padding: 10px 15px;
     outline: none;
     border: 2px solid $corSecundaria;
     border-radius: 15px;
-    @include d(d) {
-      margin-top: 80px;
-    }
   }
   @include d(t) {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    width: 90%;
-    height: 90vh;
+    align-self: flex-start;
+    width: 510px;
+    height: 700px;
     margin: 5px auto;
-    justify-content: center;
-    align-self: center;
   }
   @include d(d) {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    width: 90%;
-    height: 90vh;
-    justify-content: center;
-    align-self: center;
+    align-self: flex-start;
+    width: 510px;
+    height: 700px;
+    margin: 5px auto;
   }
 }
 .modal-bonus.errado {
@@ -106,8 +102,11 @@
   animation: piscaAzul 1000ms infinite;
   align-self: center;
   margin-top: 0px;
+  @include d(t) {
+    width: 400px;
+  }
   @include d(d) {
-    width: 500px;
+    width: 400px;
   }
 }
 .botao-responder:disabled {
@@ -148,7 +147,6 @@
 }
 
 .sublinhado {
-  display: none;
   @include fontePrincipal(g);
   letter-spacing: 2px;
 
@@ -159,8 +157,13 @@
   padding: 5px 10px;
   border-radius: 15px;
 
+  @include d(t) {
+    top: 58%;
+    font-size: 2rem;
+  }
+
   @include d(d) {
-    display: block;
+    top: 58%;
     font-size: 2.5rem;
   }
 }

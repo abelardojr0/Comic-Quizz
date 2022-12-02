@@ -103,12 +103,4 @@
   &:hover {
     transform: scale(1.05);
   }
-  @include d(t) {
-    top: -30px;
-    right: -30px;
-  }
-  @include d(d) {
-    top: -30px;
-    right: -30px;
-  }
 }

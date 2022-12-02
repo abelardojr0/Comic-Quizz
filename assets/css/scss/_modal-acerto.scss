@@ -34,6 +34,18 @@
   background-image: url(../img/bg-acerto.jpg);
   background-position: center;
   background-size: cover;
+  @include d(t){
+    align-self: flex-start;
+    width: 500px;
+    height: 690px;
+    margin: 5px auto;
+  }
+  @include d(d){
+    align-self: flex-start;
+    width: 500px;
+    height: 690px;
+    margin: 10px auto;
+  }
 }
 
 .nome-heroi {
@@ -115,7 +127,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
 
   color: $corFontePrincipal;
   background: linear-gradient(0deg, $corSecundaria 0%, #fece00 100%);
@@ -159,17 +170,17 @@
   align-items: center;
   gap: 10px;
 
-  @include d(t) {
-    position: absolute;
-    bottom: 15%;
-    padding: 0px 30px;
-  }
-  @include d(d) {
-    position: absolute;
-    bottom: 15%;
-    justify-content: space-between;
-    padding: 0px 100px;
-  }
+  // @include d(t) {
+  //   position: absolute;
+  //   bottom: 15%;
+  //   padding: 0px 30px;
+  // }
+  // @include d(d) {
+  //   position: absolute;
+  //   bottom: 15%;
+  //   justify-content: space-between;
+  //   padding: 0px 100px;
+  // }
 }
 .acerto-footer {
   display: flex;
