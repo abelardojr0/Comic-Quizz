@@ -64,7 +64,7 @@
 
   @include d(d) {
     padding: 5px 10px;
-    width: 100px;
+    width: 150px;
   }
   img {
     max-width: 30px;
@@ -100,7 +100,7 @@
     max-width: 20px;
   }
   @include d(d) {
-    width: 100px;
+    width: 150px;
     top: 60px;
   }
 }
