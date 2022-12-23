@@ -22,17 +22,7 @@ Projeto 100% responsivo!
 ![comic-home-mobile](https://user-images.githubusercontent.com/106066785/209359524-5627bb36-6e5b-4abc-bb11-edb095904fc4.png)
 ![comic-jogo-mobile](https://user-images.githubusercontent.com/106066785/209359529-a4bdd8ce-a736-46c0-936a-5a25209c3ca0.png)
 
-
-# :hammer: Funcionalidades do Projeto
-
-- `Funcionalidade 1`: Controle de Dados
-- `Funcionalidade 2`: Escolha e progressão de níveis
-- `Funcionalidade 3`: Menu de Dicas
-- `Funcionalidade 4`: Controle de letras
-- `Funcionalidade 5`: Sessão Bônus
-
-
-# :pushpin: Projeto em Execução
+# :hammer: Projeto em Execução
 
 https://user-images.githubusercontent.com/106066785/209359908-0346c3db-95b0-4978-b409-41d45856e02f.mp4
 
