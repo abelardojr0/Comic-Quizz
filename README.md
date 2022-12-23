@@ -1,5 +1,5 @@
 # :star: Comic Quizz
-
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 ![logo](https://user-images.githubusercontent.com/106066785/209358800-790f269b-3a0e-4cfe-92a5-c0d597d4a281.png)
 
 
